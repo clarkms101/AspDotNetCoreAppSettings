@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApplication1.Config;
 
 namespace WebApplication1
 {
@@ -24,6 +25,8 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.Configure<UserConfig>(Configuration.GetSection("TestUser"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
